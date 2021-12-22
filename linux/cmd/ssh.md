@@ -16,13 +16,10 @@
   $ scp [option]  user@serverip:/path/to/source/directory  /path/to/destination/file
   ```
 
-  
+### 开启 ssh 服务 
 
-虚拟机和主机之前实现复制粘贴
+默认是指安装了ssh-client, 需要我们手动安装 ssh-server。
 
-  ```
-  $ sudo apt-get autoremove open-vm-tools
-  $ sudo apt-get install open-vm-tools
-  $ sudo apt-get install open-vm-tools-desktop
-  ```
-
+```
+$ sudo apt-get install openssh-server
+```
