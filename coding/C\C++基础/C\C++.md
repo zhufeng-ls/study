@@ -31,3 +31,4 @@ int main (){
 
   // 结果输出为：func2，
                func1。
+
