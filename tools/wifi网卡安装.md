@@ -16,6 +16,7 @@ $ cd rtl8821CU
 $ chmod +x dkms-install.sh
 $ sudo ./dkms-install.sh
 $ sudo modprobe 8821cu 
+$ sudo usb_modeswitch -KW -v 0bda -p 1a2b
 ```
 
 然后重启
