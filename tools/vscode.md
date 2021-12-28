@@ -32,3 +32,9 @@
     }
     ```
 4. 重启scode
+
+## 让隐藏字符现身
+
+添加配置
+
+>"editor.renderControlCharacters": true
