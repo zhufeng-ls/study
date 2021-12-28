@@ -31,10 +31,19 @@
     "editor.detectIndentation":false
     }
     ```
-4. 重启scode
+4. 重启vscode
 
 ## 让隐藏字符现身
 
 添加配置
 
 >"editor.renderControlCharacters": true
+
+## vscode 无法输入中文
+
+原因: 缺少插件。
+
+解决： 安装 snap。
+```
+$ sudo apt install snap
+```

@@ -11,4 +11,4 @@ $ git config --global https.proxy http://192.168.0.101:808
 问题: 生成的token 权限太低，无法访问。
 
 解决: 重新生成更高权限的token。
-~                             
+             
