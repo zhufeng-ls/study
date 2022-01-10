@@ -10,4 +10,3 @@ char* p = src + 3;
 
 int ret  = p - src; // ret = 3
 ```
-

@@ -8,3 +8,12 @@ char *strncpy(char *dest, const char *src, size_t n)
 
 也就是说，strncpy 拷贝时并不会对字符进行是否为 '\0' 的判断。
 
+
+
+### strrchr
+
+```
+const char* strrchr (const char *__s, int __c)
+```
+
+返回: 返回最后一次出现`c`的位置
