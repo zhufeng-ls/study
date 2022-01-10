@@ -12,7 +12,6 @@ $ docker pull <镜像名称>
 
 ### 启动容器
 
---name： 给容器命名。
 ```
 $ docker run -it ubuntu  [--name <container-name>]  /bin/bash  
 ```
@@ -22,6 +21,9 @@ $ docker run -it ubuntu  [--name <container-name>]  /bin/bash
 -i: 代表交互，若不添加此选项，则输入命令无法响应
 -t: 代表终端，若不添加此选项，因为没有阻塞，容器很快就退出了。 
 -d: 后台运行，可以通过attach, exec 启动容器
+--name: 给容器命名。
+-p: 指定端口。
+
 
 **attach**
 
@@ -67,15 +69,15 @@ $ run i
 
 ### 导出容器
 
-即保存快照
+是保存当前的快照，然后导出镜像生成新的镜像，再从新的镜像里生成容器。
 ```
 $ docker export <container-id>  >  ubuntu.tar
 ```
 ### 导入容器
 
-即恢复快照
+将保存的快照导入镜像，生成新的镜像， `image-name`由自己指定生成的新镜像名称。 
 ```
-$ cat <快照文件> | docker import - <container-name>
+$ cat <快照文件> | docker import - <image-name>
 ```
 
 ### 删除容器
@@ -86,9 +88,32 @@ $ docker rm <container-id>
 -f: 强制删除正在运行的容器
 -l: 移除容器的网络连接
 
+删除所有终止的容器
+
+```
+$ docker container prune
+```
+
 ### 查看容器的标准输出
 
 ```
 $ docker logs <container-id>
 ```
 
+选项:
+
+-f: 让其自动滚动，类似`tail -f`
+
+### web容器
+
+拉取镜像
+```
+$ docker pull training/webapp 
+```
+
+生成容器
+```
+$ docker run -d -P training/webapp python app.py
+```
+
+## [容器连接](./容器连接.md)
