@@ -22,6 +22,9 @@
 <img src='http://img2.imgtn.bdimg.com/it/u=4076814747,12025271&fm=26&gp=0.jpg' style='float:right; width:300px;height:100 px'/>
 ```
 
+## 删除线
+
+\~\~这是删除的文本内容~~
 
 
 ## 设置大小、颜色
@@ -80,3 +83,8 @@
 
 <div align=center><img src="http://pic11.photophoto.cn/20090626/0036036341009653_b.jpg" width="50%" height="50%"></div>
 
+### 跳转到文件的某个目录
+
+跳转到 123.md 的 目录1 项
+
+\[名称\](./doc/123.md#目录1)
