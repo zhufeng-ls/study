@@ -47,3 +47,7 @@
 ```
 $ sudo apt install snap
 ```
+
+## vscode 无法选中整行
+
+输入法出现了问题，切换输入法可以解决
