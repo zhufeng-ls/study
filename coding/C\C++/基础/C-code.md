@@ -10,3 +10,7 @@ char* p = src + 3;
 
 int ret  = p - src; // ret = 3
 ```
+
+### realloc
+
+> 当 malloc 分配的内存不够用时，使用 realloc 来重新分配 
