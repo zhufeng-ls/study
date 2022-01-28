@@ -104,6 +104,18 @@ $ docker logs <container-id>
 
 -f: 让其自动滚动，类似`tail -f`
 
+### docker访问主机设备
+
+映射所有设备
+> -v /dev:/dev
+
+
+映射指定设备
+> --device /dev/video0:/dev/video1
+
+或者，假设您的USB设备在/dev/bus/usb中的主机上具有可用的驱动程序等，您可以使用特权模式和volumes选项将其安装在容器中.
+> --privileged
+
 ### web容器
 
 拉取镜像
