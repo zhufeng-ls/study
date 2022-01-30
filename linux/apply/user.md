@@ -22,13 +22,4 @@ $ echo user:pwd | chpasswd
 
 ## 用户组中用户的添加和删除
 
-```
-$ gpasswd [options] groupName
-```
-
-**可选参数说明**
-* **-a**: 添加用户到组，即add
-* **-d**: 从组中删除用户
-* **-A或-M**: 指定管理员
-* **-r**: 删除密码
-* **-R**: 限制用户登入组。
+[使用 gpasswd 添加和删除用户](../cmd/gpasswd.md)

@@ -1,0 +1,73 @@
+
+## 作用
+存放 deb 包的安装源，在此文件下的源，在 `apt update` 和 `apt upgrade`后就可以使用apt install 安装
+
+## 示例：
+```
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+```
+
+## 格式
+
+```
+deb http://site.example.com/debian distribution component1 component2 component3
+deb-src http://site.example.com/debian distribution component1 component2 component3
+```
+
+## 档案类型
+
+**deb** 
+
+档案类型为二进制预编译软件包，一般我们所用的档案类型。
+
+**deb-src**
+
+档案类型为用于编译二进制软件包的源代码
+
+## 仓库地址
+
+常用镜像地址列表:
+
+**debian**
+
+https://www.debian.org/mirror/list
+
+**ubuntu**
+
+https://wiki.ubuntu.com.cn/源列表
+
+## 发行版
+
+发行版有三类办法。
+1. 发行版的具体代号，如 `xenial`, `trusty`, `precise`等。
+2. 发行版的发行类型， 如 `oldstable`, `stable`, `testing`, `unstable`。
+3. 在发行版后有进一步的指定, 如 `xenial-updates`, `trusty-security`, `stable-backports` 等。
+
+## 软件包分类
+
+可以有一个或者多个。
+
+**main**
+
+官方支持的自由软件
+
+**restricted**
+
+官方支持的非完全自由软件
+
+**universe**
+
+社区维护的自由软件
+
+**multiverse**
+
+非自由软件
