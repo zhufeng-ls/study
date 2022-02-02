@@ -1,6 +1,6 @@
-## 问题
+# 问题
 
-**Write access to repository not granted**
+## Write access to repository not granted
 
 问题: 生成的token 权限太低，无法访问。
 
