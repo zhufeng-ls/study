@@ -32,7 +32,7 @@
 
 ### add_library
 
-默认的修饰方式是static, 若想生成动态库，则需要添加 -shared, 且必须要在
+默认的修饰方式是`static`, 若想生成动态库，则需要添加 `-shared` 或者 `SHARED`, 且必须要在
 当前位置加，通过add_definitions() 或 add_compile_options添加则没有效果.
 
 
