@@ -1,3 +1,6 @@
+[toc]
+
+# shell
 ## shell
 
 ### 声明 shell
@@ -215,6 +218,7 @@ then
 fi
 ```
 
+
 注意：
 
 bash shell 只能处理整数， 不能用 test 处理浮点数
@@ -242,6 +246,13 @@ sort 比较字符串大小的顺序和 test 相反， 在 test 中， 大写字�
 #### **文件比较**
 
 ![image-20211208125119638](images/shell-compareFile.png)
+
+```
+if [ ! -f "/usr/data" ]
+then
+    echo "file not exsit"
+fi
+```
 
 
 
