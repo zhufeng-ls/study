@@ -12,7 +12,7 @@
   | link_directories("")                                  | 添加链接库的路径，一次可添加多个                             |                                                              |
   | link_libraries("")                                    | 添加要链接的库文件名称，一次可添加多个                       |                                                              |
   | add_definitions("-DONNX_NAMESPACE=${ONNX_NAMESPACE}") | 在源文件的编译中添加-D define标志。                          |                                                              |
-  | add_subdirectory(third_party/onnx EXCLUDE_FROM_ALL)   | 新添加一个目录位置，编译这个目录中所有的内容，一般这个目录中也会包含CMakeLists文件 |                                                              |
+  | add_subdirectory(third_party/onnx ${BINARY_DIR})   | 新添加一个目录位置，编译这个目录中所有的内容，一般这个目录中也会包含CMakeLists文件, 生成的目录由自己指定 |                                                              |
   | find_package(OpenCV REQUIRED)                         | 这个命令是cmake中经常使用的命令，如果我们想在cmake中使用一些其他的大型开源项目(编译好的)，例如OpenCV，在我们将OpenCV编译好之后，如果我们想使用它，我们就可以在cmake中添加。 |                                                              |
   | list(append GPU_ARCHS  51 61 75)                      | 往GPU_ARCHS里面添加51，61，75变量                            |                                                              |
   | config.cmake                                          | 如果需要我们的CMakeLists有一定的自由配置，比如，我们需要开启CUDA的支持，或者关闭某个功能。如果功能项比较多的话，每次增加功能或者修改，直接在CMakeLists中写一堆代码命令会很麻烦。在这种情况下的话，最好是另外创建一个名为`config.cmake`的文件，这个文件中填写了我们的配置信息(举个例子)： |                                                              |
