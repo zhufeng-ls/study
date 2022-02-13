@@ -2,5 +2,6 @@
 
 ## 1. 把 `sizeof` 关键字当作修饰符号， 为什么不会与系统自带的sizeof 冲突。
 
-sizeof 是一元运算符， 因此可以当做 - 、+ 一样使用，及在变量前加该符号表示大小，若是后面跟类型，则sizeof必须带括号。
+**可见** 
 
+[sizeof 释义](../../c&c++/libraryFunc/c/sizeof.md#sizeof后面接变量名)

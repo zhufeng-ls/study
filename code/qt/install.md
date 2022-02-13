@@ -1,5 +1,6 @@
 ## 安装
 
+**安装包**: http://download.qt.io/archive/qt/
 
 ## 注意
 

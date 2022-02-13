@@ -95,3 +95,7 @@ rpc 原理。
 ### 什么是明文
 
 ### 使用命令为 boost 库创建软链接。
+
+
+
+linux ,windows 下文件编码， 以及linux 和 windows显示中文分别用什么编码

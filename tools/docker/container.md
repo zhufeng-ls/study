@@ -1,16 +1,10 @@
-## container
+# container
 
 **中文:** 容器
 
 容器是从镜像派生下来的，即容器是镜像初始状态的一次拷贝，后续容器可以创建快照和恢复快照。
 
-### 下载镜像
-
-```
-$ docker pull <镜像名称>
-```
-
-### 启动容器
+## 启动容器
 
 ```
 $ docker run -it ubuntu  [--name <container-name>]  /bin/bash  
@@ -39,7 +33,7 @@ $ docker attach <container-id>
 $ docker exec -it <container-id>
 ```
 
-### 查看所有的容器
+## 查看所有的容器
 
 ```
 $ docker ps -a
@@ -55,19 +49,19 @@ $ docker container ls -a
 $ docker start <container-id>
 ```
 
-### 停止容器
+## 停止容器
 
 ```
 $ docker stop <container-id>
 ```
 
-### 后台运行
+## 后台运行
 
 ```
 $ run i
 ```
 
-### 导出容器
+## 导出容器
 
 是保存当前的快照，然后导出镜像生成新的镜像，再从新的镜像里生成容器。
 ```
@@ -80,7 +74,7 @@ $ docker export <container-id>  >  ubuntu.tar
 $ cat <快照文件> | docker import - <image-name>
 ```
 
-### 删除容器
+## 删除容器
 
 ```
 $ docker rm <container-id>
@@ -94,7 +88,7 @@ $ docker rm <container-id>
 $ docker container prune
 ```
 
-### 查看容器的标准输出
+## 查看容器的标准输出
 
 ```
 $ docker logs <container-id>
@@ -104,7 +98,7 @@ $ docker logs <container-id>
 
 -f: 让其自动滚动，类似`tail -f`
 
-### docker访问主机设备
+## docker访问主机设备
 
 映射所有设备
 > -v /dev:/dev
@@ -116,7 +110,7 @@ $ docker logs <container-id>
 或者，假设您的USB设备在/dev/bus/usb中的主机上具有可用的驱动程序等，您可以使用特权模式和volumes选项将其安装在容器中.
 > --privileged
 
-### web容器
+## web容器
 
 拉取镜像
 ```
@@ -128,4 +122,28 @@ $ docker pull training/webapp
 $ docker run -d -P training/webapp python app.py
 ```
 
-## [容器连接](./容器连接.md)
+## [容器连接](./container-connect.md)
+
+## 查看端口映射
+
+```
+$ docker port <container-id | container-name>
+```
+
+## 查看容器内运行的进程
+
+```
+$ docker top <container-id | container-name>
+```
+
+## 查看容器的底层信息
+
+```
+$ docker inspect <container-id | container-name>
+```
+
+## 查询最后一次创建的容器
+
+```
+$ docker ps -l
+```
