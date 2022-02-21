@@ -102,4 +102,12 @@ $ docker build -t "runnoob/myImage:1.0" dir/
 ```
 $ docker tag <image-id> runoob/myImage:tagName
 ```
+## 推送镜像
 
+打tag
+
+推送
+
+```
+$ docker push username/ubuntu:18.04
+```

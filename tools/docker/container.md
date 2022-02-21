@@ -147,3 +147,27 @@ $ docker inspect <container-id | container-name>
 ```
 $ docker ps -l
 ```
+
+## docker 显示图形界面
+**参考网址**: \
+https://blog.csdn.net/Frank_Abagnale/article/details/80243939#commentBox \
+https://blog.51cto.com/u_15187242/2744702
+
+1. 安装X11， 开放权限
+```
+$ sudo apt-get install x11-xserver-utils
+$ xhost +
+```
+2. 启动 docker 容器时， 添加选项如下
+```
+ -v /tmp/.X11-unix:/tmp/.X11-unix            #共享本地unix端口
+ -e DISPLAY=unix$DISPLAY                   #修改环境变量DISPLAY    把docker 的设置和主机一样
+ -e GDK_SCALE                             #我觉得这两个是与显示效果相关的环境变量，没有细
+ -e GDK_DPI_SCALE 
+
+```
+**例如**：
+```
+$ docker run -d -p 6866:6800  -v /etc/localtime:/etc/localtime:ro   -v /tmp/.X11-unix:/tmp/.X11-unix   -e DISPLAY=unix$DISPLAY   -e GDK_SCALE   -e GDK_DPI_SCALE  --name scrapyd  willshory/scrapyd
+```
+3. 将 `xhost +` 命令添加到开机启动脚本中
