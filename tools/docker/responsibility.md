@@ -19,17 +19,3 @@ $ docker login
 ```
 $ docker logout
 ```
-
-## 推送镜像
-
-打tag
-
-```
-$ docker tag ubuntu:18.04 username/ubuntu:18.04
-```
-
-推送
-
-```
-$ docker push username/ubuntu:18.04
-```

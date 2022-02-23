@@ -12,3 +12,6 @@ ptr.reset(new Base(2));
 ptr.reset();
 ```
 
+## 单例模式
+
+1. 单例模式中，初始化智能指针时，使用 `std::shared<T>(new T)`， 不能使用 std::make_shared<T>(), 后者会调用构造函数， 因为构造函数是私有的，所以会初始化失败。
