@@ -100,6 +100,9 @@ $ docker logs <container-id>
 
 ## docker访问主机设备
 
+注意:
+* -v 必须要放在镜像名前面
+
 映射所有设备
 > -v /dev:/dev
 
@@ -163,7 +166,7 @@ $ xhost +
  -v /tmp/.X11-unix:/tmp/.X11-unix            #共享本地unix端口
  -e DISPLAY=unix$DISPLAY                   #修改环境变量DISPLAY    把docker 的设置和主机一样
  -e GDK_SCALE                             #我觉得这两个是与显示效果相关的环境变量，没有细
- -e GDK_DPI_SCALE 
+   
 
 ```
 **例如**：
