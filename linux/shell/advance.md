@@ -166,3 +166,18 @@ for i in $(seq 1 $[$num-1])
 #!/bin/sh -e
 ```
 
+### 查找脚本所在目录
+```
+baseDir=$(pushd $(dirname "$0") >/dev/null; pwd; popd >/dev/null)
+```
+
+### 查询命令是否执行成功
+‵‵`
+if [ $? -eq 0 ]; then
+        echo $videotime
+else
+	echo "get video-time failed"
+	exit -1
+fi
+‵‵`
+
