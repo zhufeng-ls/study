@@ -23,3 +23,11 @@ $ git stash drop <stash-id>
 ```
 $ git stash clear
 ```
+
+将一个分支的提交合并到另一个分支。
+
+1. 切换到需要合并的分支。
+2. --
+    ```
+    git cherry-pick <commit-id>
+    ```
