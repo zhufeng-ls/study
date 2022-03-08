@@ -10,3 +10,6 @@ $ sudo apt-get install terminator
 ## 屏幕录制
 
 安装 recordmydesktop， 默认源
+
+## 便签
+安装 indicator-stickynotes
