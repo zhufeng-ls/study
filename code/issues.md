@@ -113,3 +113,7 @@ linux ,windows 下文件编码， 以及linux 和 windows显示中文分别用�
 vector 经常出问题。
 
 释放处于time_wait状态的端口.
+
+new 申请的空间由分配者还是调用者释放。
+
+使用auto接收 std::shared的指针时，引用记数会加1吗。
