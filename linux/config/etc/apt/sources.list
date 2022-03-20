@@ -52,6 +52,18 @@ https://wiki.ubuntu.com.cn/源列表
 2. 发行版的发行类型， 如 `oldstable`, `stable`, `testing`, `unstable`。
 3. 在发行版后有进一步的指定, 如 `xenial-updates`, `trusty-security`, `stable-backports` 等。
 
+## 版本
+21.04
+    hirsute（詳細）
+20.10
+    groovy（詳細）
+18.04
+    bionic（詳細）
+16.04
+    xenial（詳細）
+14.04
+    trusty（詳細）
+
 ## 软件包分类
 
 可以有一个或者多个。

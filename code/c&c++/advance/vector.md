@@ -16,3 +16,12 @@ emplace_back 直接调用构造函数，不需要调用拷贝构造函数。
    ```
    copy(arr.begin(), arr.end(), std::ostream_iterator<uint8_t>(dest, "; "));
    ```
+
+## 初始化
+申请n个空间，并初始化为0。
+```
+vector<int> vec(n,0);
+```
+
+## 注意
+1. vector.size()的返回值是unsighed long 类型，当用户for循环的参数时，一定要将其强转成int， 否则容易发生内存越界

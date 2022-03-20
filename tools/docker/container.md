@@ -5,7 +5,7 @@
 容器是从镜像派生下来的，即容器是镜像初始状态的一次拷贝，后续容器可以创建快照和恢复快照。
 
 ## 启动容器
-
+> 若镜像名不加版本，则默认匹配latest版本
 ```
 $ docker run -it ubuntu  [--name <container-name>]  /bin/bash  
 ```
@@ -15,8 +15,7 @@ $ docker run -it ubuntu  [--name <container-name>]  /bin/bash
 -i: 代表交互，若不添加此选项，则输入命令无法响应
 -t: 代表终端，若不添加此选项，因为没有阻塞，容器很快就退出了。 
 -d: 后台运行，可以通过attach, exec 启动容器
---name: 给容器命名。
--p: 指定端口。
+--name: 给容器命名。, 必须要放在镜像 id 后面
 
 
 **attach**
@@ -110,7 +109,8 @@ $ docker logs <container-id>
 映射指定设备
 > --device /dev/video0:/dev/video1
 
-或者，假设您的USB设备在/dev/bus/usb中的主机上具有可用的驱动程序等，您可以使用特权模式和volumes选项将其安装在容器中.
+使docker 容器内的root权限为真正的root权限， 可以对host 和 设备进行操作，否则在docker内挂载设备会失败。\
+假设您的USB设备在/dev/bus/usb中的主机上具有可用的驱动程序等，您可以使用特权模式和volumes选项将其安装在容器中。
 > --privileged
 
 ## web容器

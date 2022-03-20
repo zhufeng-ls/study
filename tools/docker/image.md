@@ -98,7 +98,7 @@ $ docker build -t "runnoob/myImage:1.0" dir/
 * **-t**: 指定要创建的镜像名称。
 
 ## 为镜像打标签
-
+> 若不加版本，则默认为latest
 ```
 $ docker tag <image-id> runoob/myImage:tagName
 ```
