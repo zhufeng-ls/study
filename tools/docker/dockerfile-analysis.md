@@ -101,3 +101,9 @@ Dockerfile的指令
 17	HEALTHVHECK	健康检查	HEALTHCHECK [OPTIONS] CMD command	检查命令执行状态
  	 	 	HEALTHCHECK NONE	 
 18	SHELL	覆盖默认shell	SHELL ["executable", "parameters"]	 
+
+
+## 注意
+1. Dockerfile 中 COPY命令禁止拷贝当前目录之外的文件，比如 `../` 。
+2. 若Dockerfile有指定CMD命令时，则创建容器一定在添加 -it ,表示可以进行终端交互。
+3. docker run 指定参数会覆盖掉CMD默认值

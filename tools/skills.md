@@ -13,3 +13,11 @@ $ sudo apt-get install terminator
 
 ## 便签
 安装 indicator-stickynotes
+
+## 文件差异比较
+
+安装 Beyond Compare
+
+**参考网址**:\
+http://zhsay.com/?p=155
+
