@@ -174,3 +174,19 @@ $ xhost +
 $ docker run -d -p 6866:6800  -v /etc/localtime:/etc/localtime:ro   -v /tmp/.X11-unix:/tmp/.X11-unix   -e DISPLAY=unix$DISPLAY   -e GDK_SCALE   -e GDK_DPI_SCALE  --name scrapyd  willshory/scrapyd
 ```
 3. 将 `xhost +` 命令添加到开机启动脚本中
+
+## 添加域名
+```
+docker run 
+--add-host=test.docker.com:192.168.1.9   
+--add-host=test2.docker.com:192.168.1.10
+--name se-chrome  se/chrome:3
+```
+
+
+## 挂载目录到docker中用来存放日志
+
+`:`前面是宿主机目录，后面是容器目录
+```
+-v /var/local/:/opt/logs/
+```
