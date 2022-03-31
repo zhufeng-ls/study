@@ -45,3 +45,12 @@ $ sudo systemctl restart docker
 $ sudo chown "${USER}":"${USER}" /home/"${USER}"/.docker -P
 $ sudo chmod g+rwx "/home/${USER}/.docker" -R
 ```
+
+## error getting credentials - err: exit status 1, out: `GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.secrets was not provided by any .service files`
+**参老网址**:\
+https://stackoverflow.com/questions/50151833/cannot-login-to-docker-account
+
+1. 出现此问题是因为它无法在 home/.docker/ 中找到或创建 config.json。我所做的是将 docker-credential-secretservice 重命名为其他名称，然后再次尝试登录。然后它自己创建了 config.json，我就可以登录到 docker hub
+
+## 注意:
+1. docker 纯净环境没有 bc 命令，写 shell 脚本时要注意。

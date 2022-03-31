@@ -10,7 +10,7 @@ $sudo apt-get install build-essential cmake git libgtk2.0-dev pkg-config libavco
 
 ## 构建
 
-**realsense** 
+**realease** 
 > 版本: 4.5.2
 
 ```

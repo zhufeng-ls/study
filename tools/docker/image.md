@@ -111,3 +111,9 @@ $ docker tag <image-id> runoob/myImage:tagName
 ```
 $ docker push username/ubuntu:18.04
 ```
+
+## 查看镜像详细信息
+
+```
+$ docker inspect <镜像id> 
+```

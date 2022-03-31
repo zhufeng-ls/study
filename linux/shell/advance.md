@@ -184,3 +184,13 @@ fi
 ### 脚本参数
 * **函数名称**: FUNCNAME
 
+
+### 防止脚本反复执行
+```
+checkitem="$0"
+let procCnt=`ps -A --format='%p%P%C%x%a' --width 2048 -w --sort pid|grep "$checkitem"|grep -v grep|grep -v " -c sh "|grep -v "$$" | grep -c sh|awk '{printf("%d",$1)}'`
+if [ ${procCnt} -gt 0 ] ; then
+    echo "$0脚本已经在运行[procs=${procCnt}],此次执行自动取消."
+    exit 1;
+fi
+```

@@ -61,7 +61,7 @@ no warnings!
 
 
 
-​	下面给个例子, 需要打开警告 -Wall 输出调试信息。
+​下面给个例子, 需要打开警告 -Wall 输出调试信息。
 
 > ```
 > #include <stdio.h>
