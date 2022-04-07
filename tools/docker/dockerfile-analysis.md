@@ -105,5 +105,7 @@ Dockerfile的指令
 
 ## 注意
 1. Dockerfile 中 COPY命令禁止拷贝当前目录之外的文件，比如 `../` 。
-2. 若Dockerfile有指定CMD命令时，则创建容器一定在添加 -it ,表示可以进行终端交互。
-3. docker run 指定参数会覆盖掉CMD默认值
+2. Dockerfile 中 ,使用COPY拷贝目录时，禁止使用 `COPY release/* /opt/release` 的方式, \
+   这会将release子目录下的文件拷贝出来，而不是按照目录拷贝它的子目录，正确的写法是`COPY release /opt/release`
+3. 若Dockerfile有指定CMD命令时，则创建容器一定在添加 -it ,表示可以进行终端交互。
+4. docker run 指定参数会覆盖掉CMD默认值

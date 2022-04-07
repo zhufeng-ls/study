@@ -34,9 +34,11 @@ $ docker exec -it <container-id>
 
 ## 查看所有的容器
 
+不接参数表示查看启动的容器
 ```
 $ docker ps -a
 ```
+
 也可以使用下述命令
 ```
 $ docker container ls -a
@@ -190,3 +192,5 @@ docker run
 ```
 -v /var/local/:/opt/logs/
 ```
+
+-v 后面加`:ro` 表示不可修改
