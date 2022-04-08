@@ -119,3 +119,5 @@ new 申请的空间由分配者还是调用者释放。
 使用auto接收 std::shared的指针时，引用记数会加1吗。
 
 大根堆和小根堆的原理
+
+nullptr_t 和 nullptr 的不同
