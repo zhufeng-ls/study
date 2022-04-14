@@ -122,3 +122,6 @@ new 申请的空间由分配者还是调用者释放。
 
 nullptr_t 和 nullptr 的不同
 
+std::array 和 数组有什么不同
+
+std::realloc 和 malloc 的不同
