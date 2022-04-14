@@ -5,6 +5,8 @@
 * declare: 声明
 * retry: 重试
 * manager: 管理
+* preorder: 先序 
+* inorder: 中序 
 
 ## 名词
 * definition: 定义
