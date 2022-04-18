@@ -37,6 +37,12 @@ realloc
 2. 什么时候用到原子操作？ 比如`count++`这类操作就可以使用原子操作。
 
 
+## 
+参考网址：
+
+https://www.jianshu.com/p/c8bea3807527
+
+https://blog.csdn.net/haoxingfeng/article/details/9166069
 
 #define CAPABILITY(x) \
   __attribute__(capability(x))
@@ -96,7 +102,7 @@ realloc
 #define NO_THREAD_SAFETY_ANALYSIS \
   __attribute__(no_thread_safety_analysis)
 
-  __attribute__ ((noinline))
+  __attribute__ ((noinline)) 拒绝编译器将函数内联处理
 
 
 ### __attribute__
@@ -122,3 +128,5 @@ __typeof__(*x)  y;//It   is   equivalent   to  'int y';
 __typeof__(&a) b;//It   is   equivalent   to  'int  b';
 
 __typeof__(__typeof__(int *)[4])   z; //It   is   equivalent   to  'int  *z[4]';
+
+为什么 assert 会对程序效率有很大的影响。

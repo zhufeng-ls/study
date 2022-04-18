@@ -36,4 +36,81 @@
 
 静态函数也可以内联，但其是否内联生效则值得商榷。
 
+## 友元类和友元函数
+
+参考网址:
+
+http://c.biancheng.net/view/169.html
+
+### 友元类
+
+在类 A 中声明 B 为友元类，则 B 中可以访问 A 的所有成员。
+
+写法如下:
+```c++
+friend  class  类名;
+```
+
+demo:
+```c++
+class CCar
+{
+private:
+    int price;
+    friend class CDriver;  //声明 CDriver 为友元类
+};
+class CDriver
+{
+public:
+    CCar myCar;
+    void ModifyCar()  //改装汽车
+    {
+        myCar.price += 1000;  //因CDriver是CCar的友元类，故此处可以访问其私有成员
+    }
+};
+int main()
+{
+    return 0;
+}
+```
+
+### 友元函数
+
+在定义一个类的时候，可以把一些函数（包括全局函数和其他类的成员函数）声明为“友元”，这样那些函数就成为该类的友元函数，在友元函数内部就可以访问该类对象的私有成员了。
+
+demo:
+```c++
+#include<iostream>
+using namespace std;
+class CCar;  //提前声明CCar类，以便后面的CDriver类使用
+class CDriver
+{
+public:
+    void ModifyCar(CCar* pCar);  //改装汽车
+};
+class CCar
+{
+private:
+    int price;
+    friend int MostExpensiveCar(CCar cars[], int total);  //声明友元
+    friend void CDriver::ModifyCar(CCar* pCar);  //声明友元
+};
+void CDriver::ModifyCar(CCar* pCar)
+{
+    pCar->price += 1000;  //汽车改装后价值增加
+}
+int MostExpensiveCar(CCar cars[], int total)  //求最贵气车的价格
+{
+    int tmpMax = -1;
+    for (int i = 0; i<total; ++i)
+        if (cars[i].price > tmpMax)
+            tmpMax = cars[i].price;
+    return tmpMax;
+}
+int main()
+{
+    return 0;
+}
+```
+
 
