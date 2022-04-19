@@ -6,3 +6,14 @@
 
 1). [] 为 test 命令的另一种表现形式，但必须要在符号两边加空格，用来进行数学比较和字符串比较。\
 2). [[]] 是对[] 字符串比较的加强版，(()) 是对数学比较表达式的加强版
+
+## 问题
+
+### getopt
+
+**"getopt: invalid option -- 'x'"**
+在解析的参数前加上 `-- ''`
+例如:
+```bash
+ARGS=`getopt -o v:j:: --long video:,name::,score::,tmp-dir::,jump-video: -n "$0"  -- ''  "$@" `
+```
