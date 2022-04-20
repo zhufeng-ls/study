@@ -14,3 +14,7 @@ pthread_cond_broadcast
 pthread_cond_destroy
 ```
 
+## 函数
+
+* pthread_cond_signal: 没有堵塞的条件变量时它也能成功返回，不会继续堵塞。
+

@@ -18,6 +18,16 @@ unique_ptr 不共享它的指针。它无法复制到其他 unique_ptr，无法�
 
 std::unique_ptr实现了独享所有权的语义。一个非空的std::unique_ptr总是拥有它所指向的资源。转移一个std::unique_ptr将会把所有权也从源指针转移给目标指针（源指针被置空）。拷贝一个std::unique_ptr将不被允许，因为如果你拷贝一个std::unique_ptr,那么拷贝结束后，这两个std::unique_ptr都会指向相同的资源，它们都认为自己拥有这块资源（所以都会企图释放）。因此std::unique_ptr是一个仅能移动（move_only）的类型。当指针析构时，它所拥有的资源也被销毁。默认情况下，资源的析构是伴随着调用std::unique_ptr内部的原始指针的delete操作的。
 
+**使用**
+
+unique_ptr 不能使用拷贝构造，也不能使用重载运算符 `=` 赋值，但是有个例外，它可以作为函数返回的参数，可以使用另一个 `std::unique_ptr` 接收函数返回的 `std::unique_ptr`。
+
+如果嫌弃 std::unique_ptr<T> 的名称太长，又不想销毁以前的对象，可以使用 ‵std::unique<T>::get()‵ 获取 new 的对象，直接对源对象进行操作。
+
+## 扩展
+
+1. 当函数参数为智能指针时，可以直接传入 new 生成的对象，它会自动转变成智能指针。
+
 ## 单例模式
 
 1. 单例模式中，初始化智能指针时，使用 `std::shared<T>(new T)`， 不能使用 std::make_shared<T>(), 后者会调用构造函数， 因为构造函数是私有的，所以会初始化失败。
