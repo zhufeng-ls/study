@@ -5,7 +5,7 @@
 **解决方法**:
 1. 打开谷歌浏览器设置(settings)
 2. 搜索 `DNS` , 找到 `Security` 目录下的 `Use secure DNS`选项
-3. 将配置改为 `OpenDNS`
+3. 将配置改为 `With your current service provider`
 
 
 ## 您目前无法访问，因为此网站使用了 HSTS。网络错误和攻击通常是暂时的,因此,此网页稍后可能会恢复

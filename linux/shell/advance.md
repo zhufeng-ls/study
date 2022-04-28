@@ -170,6 +170,20 @@ for i in $(seq 1 $[$num-1])
 baseDir=$(pushd $(dirname "$0") >/dev/null; pwd; popd >/dev/null)
 ```
 
+### 获取脚本的文件名
+
+**带后缀**
+
+```
+$ basename $0
+```
+
+**不带后缀**
+
+```
+$basename $0 .txt
+```
+
 ### 查询命令是否执行成功
 ‵‵`
 if [ $? -eq 0 ]; then
@@ -192,4 +206,12 @@ if [ ${procCnt} -gt 0 ] ; then
     echo "$0脚本已经在运行[procs=${procCnt}],此次执行自动取消."
     exit 1;
 fi
+```
+
+
+### 当判断守护进行中的脚本是否执行到了我们期望的地方时
+使用日志打印
+
+```bash
+date > /tmp/$0.pid
 ```
