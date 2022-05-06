@@ -21,3 +21,13 @@ $ sudo apt-get install terminator
 **参考网址**:\
 http://zhsay.com/?p=155
 
+## linux 远程连接同一局域网下的 windows
+
+安装 remmina
+
+
+配置: 
+
+https://linuxkamarada.com/en/2020/04/20/remote-desktop-connection-to-windows-from-linux-using-rdp-clients/#.YnTchCRBw5k
+
+https://unix.stackexchange.com/questions/440803/remmina-cant-remote-into-windows-server

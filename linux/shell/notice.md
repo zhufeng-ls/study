@@ -17,3 +17,10 @@
 ```bash
 ARGS=`getopt -o v:j:: --long video:,name::,score::,tmp-dir::,jump-video: -n "$0"  -- ''  "$@" `
 ```
+
+
+## 当命令文本内容中有空格时
+
+使用$(cmd) ， 而不是 \`cmd`
+
+cmd 没办法对空格进行输出，在 $(cmd) 中可以使用转义符号`\`对特殊符号进行输出
