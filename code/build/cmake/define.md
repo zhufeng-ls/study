@@ -23,3 +23,5 @@
 
   > EXECUTABLE_OUTPUT_PATH: 设置程序的输出路径
   > LIBRARY_OUTPUT_PATH： 设置库的输出路径
+
+  > CMAKE_CXX_STANDARD: 指定 c++ 的版本
