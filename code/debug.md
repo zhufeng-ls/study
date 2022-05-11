@@ -31,3 +31,9 @@ https://blog.csdn.net/Jqivin/article/details/121908435
 
 3. 重启
 4. 触发段错误， /var/crash/目录下会生成对应的文件。
+
+
+### 注意
+
+1. 当 /var目录权限有限制时，只有通过 `sudo` 运行的程序才能够保存 `coredump` 文件。
+2. 在docker 里面生成core文件时，会以主机的配置为主(存疑？)
