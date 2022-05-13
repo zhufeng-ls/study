@@ -17,18 +17,41 @@
     $ cp /home/xxx/.config/Code/User/settings.json /home/xxx/.config/Code/User/settings.json.bak
     ```
 3. 将下述内容写入`/home/xxx/.config/Code/User/settings.json`文件中
-    ```
+    ```json
     {
-    "editor.fontSize": 12,
-    "terminal.integrated.fontSize": 12,
-    // 调整 cpp 格式
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Linux, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: false, ColumnLimit: 120}",
-    // 调整字体
-    "editor.fontFamily": "'monospace', monospace, 'Droid Sans Fallback'",
-    // 调整tab空格大小
-    "editor.tabSize": 4,
-    // 使 tab 的更改生效
-    "editor.detectIndentation":false
+        "editor.fontSize": 12,
+        "terminal.integrated.fontSize": 12,
+        // 调整字体
+        "editor.fontFamily": "'monospace', monospace, 'Droid Sans Fallback'",
+        // 调整tab空格大小
+        "editor.tabSize": 4,
+        // 使 tab 的更改生效
+        "editor.detectIndentation": false,
+        "editor.renderControlCharacters": true,
+        "editor.formatOnSave": true,
+        "editor.wordWrap": "on",
+        // "emmet.triggerExpansionOnTab": true,
+        "[go]": {
+            "editor.insertSpaces": false,
+            "editor.formatOnSave": true,
+            "editor.codeActionsOnSave": {
+                "source.organizeImports": false
+            }
+        },
+        // 调整 cpp 格式
+        // "C_Cpp.clang_format_style": "Google",
+        "C_Cpp.clang_format_fallbackStyle": "Google",
+        "clang-format.executable": "/usr/bin/clang-format",
+        "workbench.colorTheme": "Ayu Mirage Bordered",
+        "workbench.iconTheme": "vscode-icons",
+        "explorer.confirmDelete": false,
+        "[cpp]": {
+            "editor.defaultFormatter": "ms-vscode.cpptools"
+        },
+        // 默认以 CPP 格式打开文件
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "clang.executable": "/usr/bin/clang-format",
+        "cmake.configureOnOpen": true,
     }
     ```
 4. 重启vscode

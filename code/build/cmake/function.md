@@ -27,6 +27,16 @@
 
 表示从 path 查找当前目录下所有的.cc 后缀的文件， 存放在 RELATIVE中， 返回的路径是对path的相对路径。
 
+## option(BUILD_TEST  "Build  test"  OFF) 
+
+cmake 外部使用通过 `cmake .. -DBUILD_TEST=ON`来启用或关闭。
+
+判断启用或关闭则通过:
+```cmake
+if(BUILD_TEST)
+    xxx
+endif()
+```
 
 ## 注意
 
@@ -42,3 +52,6 @@
 
 解决方法:
 使用`set(listname "")` 创建一个临时列表，往listname填充值， 最后再用 set 将其值赋值给传入的接收参数中。
+
+
+
