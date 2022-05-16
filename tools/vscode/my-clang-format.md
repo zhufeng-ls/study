@@ -5,7 +5,7 @@ Language:        Cpp
 # BasedOnStyle:  LLVM
 
 # 访问说明符(public、private等)的偏移, 我的tab 设置为了2，所以说明符只需要偏移一位就行
-AccessModifierOffset: -1
+AccessModifierOffset: -4
 
 # 左括号(左圆括号、左尖括号、左方括号)后的对齐: Align, DontAlign, AlwaysBreak(总是在左括号后换行)
 AlignAfterOpenBracket: Align
@@ -28,10 +28,10 @@ AllowAllArgumentsOnNextLine: true
 AllowAllConstructorInitializersOnNextLine: true
 AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: Empty
-AllowShortCaseLabelsOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: All
 AllowShortLambdasOnASingleLine: All
-AllowShortIfStatementsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: false
 AllowShortLoopsOnASingleLine: true
 AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakAfterReturnType: None
