@@ -23,3 +23,15 @@ std::numeric_limits<uint32_t>::min();
 ## std::swap
 
 交换两个同类型对象的值。
+
+## std::reverse
+
+反转排序容器内指定范围中的元素。
+
+## std::reverse_copy
+
+reverse_copy 会将结果拷贝到另外一个容器中，而不影响原容器的内容。
+
+## 构建函数 `= default();`
+
+不仅可以在声明时使用，也可以先声明，等到定义时在这么使用。

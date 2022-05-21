@@ -14,3 +14,12 @@ int unlink(const char * pathname);
 返回值:
 * 0: 成功
 * -1： 失败，错误原因在 errno。
+
+
+## setbuffer
+
+设置文件缓冲区的大小,缓冲区满了就刷新
+```c
+g_file = fopen("/dev/null", "w");
+setbuffer(g_file, buffer, sizeof buffer);
+```

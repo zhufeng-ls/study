@@ -130,3 +130,10 @@ __typeof__(&a) b;//It   is   equivalent   to  'int  b';
 __typeof__(__typeof__(int *)[4])   z; //It   is   equivalent   to  'int  *z[4]';
 
 为什么 assert 会对程序效率有很大的影响。
+
+// TODO: better itoa.
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wtautological-compare"
+#else
+#pragma GCC diagnostic ignored "-Wtype-limits"
+#endif

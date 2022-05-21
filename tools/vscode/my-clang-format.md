@@ -13,10 +13,10 @@ AlignAfterOpenBracket: Align
 # 对齐连续宏定义的风格
 AlignConsecutiveMacros: false
 
-# 连续声明时，对齐所有声明的变量名
-AlignConsecutiveAssignments: false
+# 连续赋值时，对齐所有等号
+AlignConsecutiveAssignments: true
 
-# 对齐连续位域字段的风格
+# 连续声明时，对齐所有声明的变量名
 AlignConsecutiveDeclarations: false
 
 # 用于在使用反斜杠换行中对齐反斜杠的选项
@@ -36,7 +36,10 @@ AllowShortLoopsOnASingleLine: true
 AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
-AlwaysBreakTemplateDeclarations: MultiLine
+
+# 总是在模板声明“template<...>”后换行 
+AlwaysBreakTemplateDeclarations: true
+
 BinPackArguments: false
 BinPackParameters: false
 BraceWrapping:
@@ -45,7 +48,7 @@ BraceWrapping:
   AfterControlStatement: Never
   AfterEnum:       true
   AfterFunction:   true
-  AfterNamespace:  true
+  AfterNamespace:  false
   AfterObjCDeclaration: false
   AfterStruct:     true
   AfterUnion:      true
@@ -119,7 +122,8 @@ SortIncludes:    true
 SortUsingDeclarations: true
 SpaceAfterCStyleCast: false
 SpaceAfterLogicalNot: false
-SpaceAfterTemplateKeyword: true
+# 总是在 template 关键字后面插入空格
+SpaceAfterTemplateKeyword: false
 SpaceBeforeAssignmentOperators: true
 SpaceBeforeCpp11BracedList: false
 SpaceBeforeCtorInitializerColon: true
