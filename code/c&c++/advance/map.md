@@ -17,6 +17,22 @@ map<int,int> m;
 m.erase(1); // 表示删除key为1的键值对
 ```
 
+## 查找元素
+
+```c++
+std::map<string, string>::const_iterator it = headers_.find(field);
+if (it != headers_.end())
+{
+    result = it->second;
+}
+```
+
+## 交换容器
+
+```c++
+void swap(map& __x)
+```
+
 ## 注意
 
 **`map<int,vector<int>> m`中,  `m[2].push_back(3)`; 会应用到`map`中吗, 当`m[2]`不存在时，可以这样赋值吗

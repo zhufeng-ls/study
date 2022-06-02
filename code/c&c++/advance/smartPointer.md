@@ -31,3 +31,14 @@ unique_ptr 不能使用拷贝构造，也不能使用重载运算符 `=` 赋值�
 ## 单例模式
 
 1. 单例模式中，初始化智能指针时，使用 `std::shared<T>(new T)`， 不能使用 std::make_shared<T>(), 后者会调用构造函数， 因为构造函数是私有的，所以会初始化失败。
+
+
+## static_pointer_cast
+
+基类智能指针向派生类智能指针的转换，且参数必须为 std::shared\<T\>, 
+
+## 接收任何类型的智能指针
+
+```c++
+void Channel::tie(const std::shared_ptr<void>& obj)
+```
