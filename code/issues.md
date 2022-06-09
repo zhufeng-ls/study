@@ -131,3 +131,8 @@ cmake 中 enable_testing()
 ctest
 
 tcmalloc
+
+
+std::shared_ptr 和 std::weak_ptr 的不同，
+
+以及它们如何构成叠加应用?

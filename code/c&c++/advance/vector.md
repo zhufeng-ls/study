@@ -25,3 +25,15 @@ vector<int> vec(n,0);
 
 ## 注意
 1. vector.size()的返回值是unsighed long 类型，当用户for循环的参数时，一定要将其强转成int， 否则容易发生内存越界
+
+
+## resize 和 reverse 的区别 
+
+resize 是改变当前容器内含有元素的数量，而 reverse 是预分配空间，它不会生成元素，只是确定这个容器允许放入多少对象。
+
+resize 后 vector 内的元素都被置为0了，可以直接通过下标引用。
+
+
+## capacity() 和 size() 的区别
+
+capacity() 是分配的总区域，而 size() 是实际用到的区域, 因为vector 扩容是2倍扩容，所以 resize(n) 大于当前的区域时，会进行两倍扩容，但是实际用到只有 n 个字节。

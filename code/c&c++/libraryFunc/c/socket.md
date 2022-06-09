@@ -59,6 +59,8 @@ SHUT_RDWR（2）：关闭sockfd的读写功能。不允许发送和接受(和 cl
 int socketpair(int d, int type, int protocol, int sv[2])；
 
 参数1（domain）：表示协议族，在Linux下只能为AF_LOCAL或者AF_UNIX。（自从Linux 2.6.27后也支持SOCK_NONBLOCK和SOCK_CLOEXEC）
+* SOCK_CLOEXEC: 在 fork 后，会在子进程中关闭已在父进程中打开的此套接字。
+
 参数2（type）：表示协议，可以是SOCK_STREAM或者SOCK_DGRAM。SOCK_STREAM是基于TCP的，而SOCK_DGRAM是基于UDP的
 参数3（protocol）：表示类型，只能为0
 参数4（sv[2]）：套节字柄对，该两个句柄作用相同，均能进行读写双向操作
@@ -70,3 +72,19 @@ int socketpair(int d, int type, int protocol, int sv[2])；
 3. 读、写操作可以位于同一个进程，也可以分别位于不同的进程，如父子进程。如果是父子进程时，一般会功能分离，一个进程用来读，一个用来写。因为文件描述副sv[0]和sv[1]是进程共享的，所以读的进程要关闭写描述符, 反之，写的进程关闭读描述符。 
 ```
 
+## readv 和 writev
+
+用来一次性读或写多个非连续的缓冲区
+
+```c
+#include <sys/uio.h>
+ssize_t readv(int filedes, const struct iovec *iov, int iovcnt);
+ssize_t writev(int filedes, const struct iovec *iov, int iovcnt);
+// 两个函数的返回值：若成功则返回已读、写的字节数，若出错则返回-1
+```
+
+### 参数
+
+* filedes: 文件描述符
+* iov: 指向 iovec 数组的头部指针
+* opvcnt: iov 数组中元素的个数。
