@@ -2,15 +2,71 @@
 
 ## shared_ptr
 
+用来管理堆空间的声明周期的，申请的堆空间可以传递给智能指针，它会自动管理堆空间的生命周期
+
+### 赋值
+
+```c++
+// 使用堆空间初始化，此时引用计数为1。
+std::shared_ptr<Foo> p1(new Foo);
+
+// p2 为空指针，此时引用计数为 0
+std::shared_ptr<Foo> p2;
+
+// 使用拷贝函数, 此时引用计数为 2
+std::shard_ptr<Foo> p3(p1);
+
+// 采用赋值运算符，此时引用计数为 3。
+std::shared_ptr<Foo> p4 = p3;
 ```
-// 先构建 Base(1), 引用计数为 1.
-shared_ptr<Base> ptr(new Base(1));
-// 先构建 Base(1), 再减去引用计数，因此 Base(1)被销毁. 
-// Base(2) 引用为 1.
-ptr.reset(new Base(2));
-// Base(2) 引用计数减一， 因此被销毁。
-ptr.reset();
+
+### reset
+
+```c++
+// （1）
+void reset() noexcept;
+
+// （2）
+template< class Y >
+void reset( Y* ptr );
+
+// （3）
+template< class Y, class Deleter >
+void reset( Y* ptr, Deleter d );
+
+// （4）
+template< class Y, class Deleter, class Alloc >
+void reset( Y* ptr, Deleter d, Alloc alloc );
 ```
+
+(1). 将智能指针的引用计数减1，调用该函数的对象会失效，如 `p1.reset();`, 则 p1 会失效。
+
+(2). 将当前的指针管理的对象替换为 ptr, 引用计数置为1。
+
+(3). 和 (2) 基本相同，但是传入自定义的销毁函数。
+
+**FIXME:**
+
+(4). 不懂
+
+
+### 循环引用
+
+```c++
+class Foo {
+public:
+    shared_ptr<Foo> pre;
+    shared_ptr<Foo> next;
+};
+
+std::shared_ptr<Foo> p1(new Foo(1));
+std::shared_ptr<Foo> p2(new Foo(2));
+
+p1->next = p2; 
+p2->pre = p1;
+```
+
+释放 p1 时，会先释放它的成员 next, 但是释放 p2 时， pre 成员又指向p1, 这样就构成循环引用了。
 
 ## unique_str
 

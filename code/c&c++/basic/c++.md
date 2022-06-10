@@ -114,3 +114,17 @@ int main()
 ```
 
 
+## 重载
+
+类的成员函数后面使用 const 修饰的函数可以重载。
+
+```c++
+const HttpRequest& request() const
+{ return request_; }
+
+HttpRequest& request()
+{ return request_; }
+```
+
+因为成员函数翻译成普通函数，就会多加一个参数，第一个参数就是 this 指针了，所以在后面加 const ,就说明传入的是
+const T* this 类型的对象，所以形参就不同了，就符合重载的条件。 

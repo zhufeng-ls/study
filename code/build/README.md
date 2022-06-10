@@ -11,3 +11,11 @@
 ### cmake
 
 当文件较多时，写makefile也变得十分复杂，使用cmake 用于生成 makefile
+
+
+### bazel
+
+谷歌开源工具，待学习。
+
+**FIXME** :
+
