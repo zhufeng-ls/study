@@ -132,6 +132,8 @@ ctest
 
 tcmalloc
 
+搭建交叉编译环境(好像只能搭建arm和x86的环境，没办法搭建ubuntu和windows的环境)
+
 
 std::shared_ptr 和 std::weak_ptr 的不同，
 

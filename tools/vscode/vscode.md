@@ -76,3 +76,8 @@ $ sudo apt install snap
 输入法出现了问题，切换输入法可以解决
 
 5. 调试程序
+
+## 自动换行
+* ctrl + shift + P , 输入 settings, 打开 open user settings
+* 搜索 wrap, 找到 editor:word wrap
+* 将设置改为 on 选项
