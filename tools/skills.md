@@ -31,3 +31,8 @@ http://zhsay.com/?p=155
 https://linuxkamarada.com/en/2020/04/20/remote-desktop-connection-to-windows-from-linux-using-rdp-clients/#.YnTchCRBw5k
 
 https://unix.stackexchange.com/questions/440803/remmina-cant-remote-into-windows-server
+
+
+## 查英文单词
+
+google 商店里面搜索 `沙拉查词`

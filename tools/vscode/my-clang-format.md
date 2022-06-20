@@ -14,10 +14,10 @@ AlignAfterOpenBracket: Align
 AlignConsecutiveMacros: false
 
 # 连续赋值时，对齐所有等号
-AlignConsecutiveAssignments: true
+AlignConsecutiveAssignments: false
 
 # 连续声明时，对齐所有声明的变量名
-AlignConsecutiveDeclarations: false
+AlignConsecutiveDeclarations: true
 
 # 用于在使用反斜杠换行中对齐反斜杠的选项
 AlignEscapedNewlines: Right
